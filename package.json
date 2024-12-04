@@ -1,0 +1,32 @@
+{
+  "name": "express-blog-api-crud",
+  "version": "1.0.0",
+  "description": "express blog api cruds",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlessandroSottosanti/express-blog-api-crud.git"
+  },
+  "keywords": [
+    "express",
+    "blog",
+    "api",
+    "cruds",
+    "controller"
+  ],
+  "author": "Alessandro Sottosanti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlessandroSottosanti/express-blog-api-crud/issues"
+  },
+  "homepage": "https://github.com/AlessandroSottosanti/express-blog-api-crud#readme",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "express": "^4.21.1"
+  }
+}
