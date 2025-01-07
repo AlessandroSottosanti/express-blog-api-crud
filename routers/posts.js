@@ -10,7 +10,7 @@ router.get('/', postController.index);
 router.get('/:id', checkPost.checkPostExists , postController.show);
 
 // store 
-router.post('/', checkPost.checkPostExists,  postController.create);
+router.post('/',  postController.create);
 
 // update
 router.put('/:id', checkPost.checkPostExists, postController.update);
