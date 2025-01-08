@@ -49,4 +49,27 @@ const destroy = (req, res) => {
 
 }
 
-    export default { index, destroy };
+// modify - aggiorna un post (rimuove un tag da un post)
+const update = (req, res) => {
+    const { postId, tagToRemove } = req.body;  // { postId, tagToRemove }
+    
+    const post = postsList.find(post => post.id === postId);
+    
+    if (!post) {
+        return res.status(404).json({ error: `Post con ID ${postId} non trovato` });
+    }
+
+    const tagIndex = post.tags.findIndex(tag => tag.toLowerCase() === tagToRemove.toLowerCase());
+
+    if (tagIndex === -1) {
+        return res.status(404).json({ error: `Tag '${tagToRemove}' non trovato nel post` });
+    }
+
+    // Rimuove il tag dall'array
+    post.tags.splice(tagIndex, 1);
+
+    // Rispondi con il post aggiornato
+    res.status(200).json({ success: `Tag '${tagToRemove}' rimosso dal post`, post });
+}
+
+    export default { index, destroy, update };
