@@ -1,6 +1,7 @@
 import express from 'express';
 import chalk from 'chalk';
 import postsRouter from './routers/posts.js';
+import tagsRouter from './routers/tags.js';
 import handleErrors from './middlewares/handleError.js';
 import notFoundPage from './middlewares/notFoundRoute.js';
 import cors from 'cors';
@@ -21,6 +22,10 @@ app.use(express.static("public"));
 
 // usiamo le rotte per i posts
 app.use('/posts', postsRouter);
+
+app.use('/tags', tagsRouter);
+
+
 
 app.get('/', (req, res) => {
     res.json('ciao mondo');
