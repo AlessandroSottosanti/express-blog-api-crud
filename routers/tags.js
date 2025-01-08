@@ -8,7 +8,7 @@ router.get('/', tagController.index);
 
 
 // destroy
-// router.delete('/:id', checkTag.checkTagExists, tagController.destroy);
+ router.delete('/:id', checkTag.checkTagExists, tagController.destroy);
 
 
 export default router;
